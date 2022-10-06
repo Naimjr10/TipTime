@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".MainActivity">
+
+        <!-- ikon biaya layanan -->
+        <ImageView
+            android:id="@+id/icon_biaya_layanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/biaya_layanan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/biaya_layanan"
+            app:srcCompat="@drawable/ic_store" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/biaya_layanan"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@id/pertanyaan_layanan"
+            app:layout_constraintStart_toEndOf="@id/icon_biaya_layanan"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/kolom_isian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="@string/biaya_layanan" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/icon_pertanyaan_layanan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/pertanyaan_layanan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pertanyaan_layanan"
+            app:srcCompat="@drawable/ic_service" />
+
+        <TextView
+            android:id="@+id/pertanyaan_layanan"
+            style="@style/Widget.TipTime.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/pertanyaan_service"
+            app:layout_constraintBottom_toTopOf="@id/opsi_tip"
+            app:layout_constraintStart_toStartOf="@id/biaya_layanan"
+            app:layout_constraintTop_toBottomOf="@id/biaya_layanan" />
+
+        <RadioGroup
+            android:id="@+id/opsi_tip"
+            style="@style/Widget.TipTime.CompoundButton.RadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/opsi_20persen"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/bulatkan_tip"
+            app:layout_constraintStart_toStartOf="@id/pertanyaan_layanan"
+            app:layout_constraintTop_toBottomOf="@id/pertanyaan_layanan">
+
+            <RadioButton
+                android:id="@+id/opsi_20persen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opsi_20persen"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/opsi_18persen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opsi_18persen"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <RadioButton
+                android:id="@+id/opsi_15persen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/opsi_15persen"
+                app:layout_constraintStart_toStartOf="parent" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/icon_bulatkan_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/bulatkan_tip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/opsi_tip"
+            app:srcCompat="@drawable/ic_round_up" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/bulatkan_tip"
+            style="@style/Widget.TipTime.CompoundButton.Switch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:minHeight="48dp"
+            android:text="@string/bulatkan_tip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icon_bulatkan_tip"
+            app:layout_constraintTop_toBottomOf="@id/opsi_tip" />
+
+        <Button
+            android:id="@+id/hitung_Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/hitung"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/bulatkan_tip"
+            app:layout_constraintTop_toBottomOf="@id/bulatkan_tip" />
+
+        <TextView
+            android:id="@+id/jumlah_tip"
+            style="@style/Widget.TipTime.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/jumlah_tip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hitung_Button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

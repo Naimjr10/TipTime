@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tip Time</string>
+    <string name="biaya_layanan">Biaya layanan</string>
+    <string name="opsi_20persen">Luar biasa (20%)</string>
+    <string name="opsi_18persen">Bagus (18%)</string>
+    <string name="opsi_15persen">Lumayan (15%)</string>
+    <string name="pertanyaan_service">Bagaimana servicenya?</string>
+    <string name="bulatkan_tip">Bulatkan tip?</string>
+    <string name="hitung">Hitung</string>
+    <string name="jumlah_tip1">Jumlah tip : %s</string>
+    <string name="jumlah_tip">Jumlah tip : </string>
+</resources>
